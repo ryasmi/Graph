@@ -1,8 +1,8 @@
-**my-project-name**   
-Description of my project.
+**Tree**   
+Provides "jQuery-like" functionality for tree structures.
 
 **Authors**   
-[FirstName LastName](https://www.github.com/GithubUsername)
+[Ryan Smith](https://www.github.com/ryansmith94)
 
 **Contributing**   
 Please make contributions by forking the project and creating a pull-request. Other contributions include maintaining the Wiki and issues.
