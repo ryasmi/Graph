@@ -51,9 +51,6 @@ module.exports = function (grunt) {
         // Run code with tests.
         eval(grunt.file.read("build/" + pkg.name + ".min.js"));
         eval(grunt.file.read("build/" + pkg.name + ".test.js"));
-
-        // Delete built test code.
-        grunt.file["delete"]("build/" + pkg.name + ".test.js");
     });
 
     // Load the required plugins.
