@@ -1,0 +1,24 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'test' ]
+2 info using npm@1.1.69
+3 info using node@v0.8.16
+4 verbose read json /Users/ryansmith/Documents/GitHub/Tree/package.json
+5 error Error: no version
+5 error     at validVersion (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:579:32)
+5 error     at final (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:341:23)
+5 error     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:140:33
+5 error     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:48:11)
+5 error     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:334:40
+5 error     at fs.readFile (fs.js:176:14)
+5 error     at fs.close (/usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:90:5)
+5 error     at Object.oncomplete (fs.js:297:15)
+6 error If you need help, you may report this log at:
+6 error     <http://github.com/isaacs/npm/issues>
+6 error or email it to:
+6 error     <npm-@googlegroups.com>
+7 error System Darwin 12.3.0
+8 error command "node" "/usr/local/bin/npm" "test"
+9 error cwd /Users/ryansmith/Documents/GitHub/Tree
+10 error node -v v0.8.16
+11 error npm -v 1.1.69
+12 verbose exit [ 1, true ]
