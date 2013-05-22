@@ -1,5 +1,6 @@
 # Mac.
 .DS_STORE
 
-# Node Packages.
+# Node.
 node_modules
+npm-debug.log
