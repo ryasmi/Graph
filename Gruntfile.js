@@ -53,7 +53,6 @@ module.exports = function (grunt) {
         shell: {
             pages: {
                 command: [
-                    "ls",
                     "cd ../graph-pages",
                     "git commit -am 'Auto-compile.'",
                     "git push"
@@ -64,8 +63,6 @@ module.exports = function (grunt) {
             },
             compile: {
                 command: [
-                    "ls",
-                    "cd ../graph",
                     "git commit -am 'Auto-compile.'",
                     "git push"
                 ].join("&&"),
