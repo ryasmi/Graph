@@ -1,5 +1,5 @@
 **[Graph](https://www.github.com/ryansmith94/Graph)**   
-Provides "jQuery-like" functionality for graph structures. Note that at this time Graph does not prevent cycles. Graph does allow nodes to have many parents and children.
+Provides "jQuery-like" functionality for graph structures.
 
 ![Travis-CI](https://api.travis-ci.org/ryansmith94/Graph.png?branch=master)     
 
