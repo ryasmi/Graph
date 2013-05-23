@@ -61,8 +61,12 @@
         return nodes;
     };
 
-    // Main function. Creates a tree from an array of nodes.
-    var tree = function (nodes, parentsKey, childrenKey) {
+    /**
+    * This is the description for my class.
+    *
+    * @class Tree
+    */
+    var Tree = function (nodes, parentsKey, childrenKey) {
         var toNodes = function (nodes) {
             return (Object.prototype.toString.call(nodes) !== "[object Array]") ? [nodes] : nodes;
         };
@@ -72,6 +76,15 @@
         lastChildrenKey = childrenKey || lastChildrenKey;
 
         return {
+            /**
+            * Returns the parents of given nodes.
+            * 
+            * @method parents
+            * @param {Object} [filter] An object that resembles wanted nodes.
+            * @param {Function} [filter] A function that returns true for wanted nodes.
+            * @param {Number} generations The depth of the search. If undefined it searches all generations.
+            * @return {Array} Returns the parents of given nodes.
+            */
             "parents": function (filter, generations) {
                 return get(nodes, lastParentsKey, filter, generations);
             },
@@ -94,5 +107,5 @@
     };
 
     // Add tree to global object.
-    window.TREE = tree;
+    window.TREE = Tree;
 }(window, Object));
