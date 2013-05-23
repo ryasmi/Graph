@@ -51,14 +51,27 @@ module.exports = function (grunt) {
             }
         },
         shell: {
-            cd: {
-                command: "cd ../graph-pages"
+            pages: {
+                command: [
+                    "ls",
+                    "cd ../graph-pages",
+                    "git commit -am 'Auto-compile.'",
+                    "git push"
+                ].join("&&"),
+                options: {
+                    stdout: true
+                }
             },
-            commit: {
-                command: "git commit -am 'New build - automatic.'"
-            },
-            push: {
-                command: "git push"
+            compile: {
+                command: [
+                    "ls",
+                    "cd ../graph",
+                    "git commit -am 'Auto-compile.'",
+                    "git push"
+                ].join("&&"),
+                options: {
+                    stdout: true
+                }
             }
         }
     });
