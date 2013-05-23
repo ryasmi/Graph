@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                 url: "<%= pkg.url %>",
                 version: "<%= grunt.template.today('yyyy-mm-dd, HH:MM') %>",
                 options: {
-                    paths: ["src/**/*.js"],
+                    paths: "src",
                     outdir: "build/docs"
                 }
             }

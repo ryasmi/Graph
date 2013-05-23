@@ -6,4 +6,4 @@ node_modules
 npm-debug.log
 
 # Testing
-build/tree.test.js
+build/graph.test.js

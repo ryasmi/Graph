@@ -1,8 +1,8 @@
 /* jshint devel: true, maxstatements: false */
 (function (window, undefined) {
     "use strict";
-    // Local copy of tree.
-    var TREE = window.TREE;
+    // Local copy of graph.
+    var GRAPH = window.GRAPH;
 
     // Provides testing functionality.
     var assert = (function () {
@@ -77,47 +77,47 @@
     var x = {"a": [], "b": []};
     var y = {"a": [], "b": [], "test": 10};
     var z = {"a": [], "b": []};
-    TREE([], "a", "b");
+    GRAPH([], "a", "b");
 
     // Test method availability.
-    assert.equal(!!TREE().addChildren, true, "Find addChildren function");
-    assert.equal(!!TREE().addParents, true, "Find addParents function");
-    assert.equal(!!TREE().children, true, "Find children function");
-    assert.equal(!!TREE().parents, true, "Find parents function");
-    assert.equal(!!TREE().removeChildren, true, "Find removeChildren function");
-    assert.equal(!!TREE().removeParents, true, "Find removeParents function");
+    assert.equal(!!GRAPH().addChildren, true, "Find addChildren function");
+    assert.equal(!!GRAPH().addParents, true, "Find addParents function");
+    assert.equal(!!GRAPH().children, true, "Find children function");
+    assert.equal(!!GRAPH().parents, true, "Find parents function");
+    assert.equal(!!GRAPH().removeChildren, true, "Find removeChildren function");
+    assert.equal(!!GRAPH().removeParents, true, "Find removeParents function");
 
     // Test addChildren.
-    TREE(x).addChildren(y);
+    GRAPH(x).addChildren(y);
     assert.equal(x.b[0], y, "Add child (y) to parent (x) with addChildren");
     assert.equal(y.a[0], x, "Add parent (x) to child (y) with addChildren");
 
     // Test addParents.
-    TREE(z).addParents(y);
+    GRAPH(z).addParents(y);
     assert.equal(y.b[0], z, "Add child (z) to parent (y) with addParents");
     assert.equal(z.a[0], y, "Add parent (y) to child (z) with addParents");
 
     // Test children.
-    assert.equal(arraysEqual(TREE(x).children(), TREE(x).children(undefined, 1)), true);
-    assert.equal(arraysEqual(TREE(x).children(undefined, 0), [y]), true);
-    assert.equal(arraysEqual(TREE(x).children({"test": 10}), [y]), true);
-    assert.equal(arraysEqual(TREE(x).children(resembles), [y, z]), true);
+    assert.equal(arraysEqual(GRAPH(x).children(), GRAPH(x).children(undefined, 1)), true);
+    assert.equal(arraysEqual(GRAPH(x).children(undefined, 0), [y]), true);
+    assert.equal(arraysEqual(GRAPH(x).children({"test": 10}), [y]), true);
+    assert.equal(arraysEqual(GRAPH(x).children(resembles), [y, z]), true);
 
     // Test parents.
-    assert.equal(arraysEqual(TREE(z).parents(), TREE(z).parents(undefined, 1)), true);
-    assert.equal(arraysEqual(TREE(z).parents(undefined, 0), [y]), true);
-    assert.equal(arraysEqual(TREE(z).parents({"test": 10}), [y]), true);
-    assert.equal(arraysEqual(TREE(z).parents(resembles), [y, x]), true);
+    assert.equal(arraysEqual(GRAPH(z).parents(), GRAPH(z).parents(undefined, 1)), true);
+    assert.equal(arraysEqual(GRAPH(z).parents(undefined, 0), [y]), true);
+    assert.equal(arraysEqual(GRAPH(z).parents({"test": 10}), [y]), true);
+    assert.equal(arraysEqual(GRAPH(z).parents(resembles), [y, x]), true);
 
     // Test removeChildren.
-    TREE(x).addChildren(w);
-    TREE(x).removeChildren(y);
+    GRAPH(x).addChildren(w);
+    GRAPH(x).removeChildren(y);
     assert.equal(x.b[0], w, "Remove child (y) of parent (x) with removeChildren");
     assert.equal(y.a.length, 0, "Remove parent (x) of child (y) with removeChildren");
 
     // Test removeParents.
-    TREE(z).addParents(w);
-    TREE(z).removeParents(y);
+    GRAPH(z).addParents(w);
+    GRAPH(z).removeParents(y);
     assert.equal(y.b.length, 0, "Remove child (z) of parent (y) with removeParents");
     assert.equal(z.a[0], w, "Remove parent (y) of child (z) with removeParents");
 

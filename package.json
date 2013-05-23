@@ -1,8 +1,8 @@
 {
-    "name": "tree",
-    "description": "Provides 'jQuery-like' functionality for tree structures.",
+    "name": "graph",
+    "description": "Provides 'jQuery-like' functionality for Graph structures.",
     "author": "Ryan Smith",
-    "url": "https://www.github.com/ryansmith94/Tree",
+    "url": "https://www.github.com/ryansmith94/Graph",
     "licence": {
         "name": "CC BY-NC-SA 3.0",
         "url": "http://creativecommons.org/licenses/by-nc-sa/3.0/"
