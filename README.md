@@ -1,4 +1,4 @@
-**[Graph](https://www.github.com/ryansmith94/Graph)**   
+**[Graph](https://ryansmith94.github.io/Graph)**   
 Provides "jQuery-like" functionality for graph structures.
 
 ![Travis-CI](https://api.travis-ci.org/ryansmith94/Graph.png?branch=master)     
@@ -11,3 +11,6 @@ Please make contributions by [forking](https://github.com/ryansmith94/Graph/fork
 
 **License**   
 [This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.](http://creativecommons.org/licenses/by-nc-sa/3.0/)
+
+**Documentation**   
+Documentation can be found on the [website](http://ryansmith94.github.io/Graph/docs/index.html).
