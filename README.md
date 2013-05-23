@@ -1,4 +1,4 @@
-**[Graph](https://ryansmith94.github.io/Graph)**   
+**[Graph](http://ryansmith94.github.io/Graph)**   
 Provides "jQuery-like" functionality for graph structures.
 
 ![Travis-CI](https://api.travis-ci.org/ryansmith94/Graph.png?branch=master)     
