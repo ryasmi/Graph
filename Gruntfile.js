@@ -46,8 +46,19 @@ module.exports = function (grunt) {
                 version: "<%= grunt.template.today('yyyy-mm-dd, HH:MM') %>",
                 options: {
                     paths: "src",
-                    outdir: "build/docs"
+                    outdir: "../graph-pages/docs"
                 }
+            }
+        },
+        shell: {
+            cd: {
+                command: "cd ../graph-pages"
+            },
+            commit: {
+                command: "git commit -am 'New build - automatic.'"
+            },
+            push: {
+                command: "git push"
             }
         }
     });
@@ -70,7 +81,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-contrib-yuidoc");
+    grunt.loadNpmTasks("grunt-shell");
 
     // Default task(s).
     grunt.registerTask("default", ["jshint", "concat", "uglify", "test", "yuidoc"]);
+    grunt.registerTask("compile", ["jshint", "concat", "uglify", "test", "yuidoc", "shell"]);
 };
