@@ -1,4 +1,9 @@
 /* jslint browser: true, vars: true, indent: 4 */
+/**
+* Provides the base class Tree.
+*
+* @module TREE
+*/
 (function (window, Object, undefined) {
     "use strict";
     var lastParentsKey = "parents";
