@@ -44,6 +44,7 @@ module.exports = function (grunt) {
                 description: "<%= pkg.description %>",
                 url: "<%= pkg.url %>",
                 version: "<%= grunt.template.today('yyyy-mm-dd, HH:MM') %>",
+                logo: "../images/logo.png",
                 options: {
                     paths: "src",
                     outdir: "../graph-pages/docs"
