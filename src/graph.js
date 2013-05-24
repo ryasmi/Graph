@@ -1,10 +1,6 @@
 /* jslint browser: true, vars: true, indent: 4 */
-/**
- * Attaches the base class Graph to the global object (window) with the name GRAPH.
- * Construct a new GRAPH by using `GRAPH(nodes, parentsKey, childrenKey)`.
- *
- * @module GRAPH
-*/
+// # Graph
+// Attaches the base class Graph to the global object (window) with the name GRAPH.
 (function (window, Object, undefined) {
     "use strict";
     var lastParentsKey = "parents";
@@ -67,15 +63,12 @@
         return nodes;
     };
 
-    /**
-     * Provides methods for manipulating a graph of nodes.
-     *
-     * @class Graph
-     * @param {Array} nodes An array of nodes.
-     * @param {Array} [parentsKey] The key to be used to find parents of nodes. Only needs to be set once.
-     * @param {Array} [childrenKey] The key to be used to find children of nodes. Only needs to be set once.
-     * @return {Object} Returns an object with methods to manipulate the given nodes.
-    */
+    // ## Graph
+    // Provides methods for manipulating a graph of nodes.
+    // @param {Array} nodes An array of nodes.
+    // @param {Array} [parentsKey] The key to be used to find parents of nodes. Only needs to be set once.
+    // @param {Array} [childrenKey] The key to be used to find children of nodes. Only needs to be set once.
+    // @return {Object} Returns an object with methods to manipulate the given nodes.
     var Graph = function (nodes, parentsKey, childrenKey) {
         var toNodes = function (nodes) {
             return (Object.prototype.toString.call(nodes) !== "[object Array]") ? [nodes] : nodes;
@@ -86,76 +79,58 @@
         lastChildrenKey = childrenKey || lastChildrenKey;
 
         return {
-            /**
-             * Returns the parents of given nodes.
-             * 
-             * @method parents
-             * @param {Object} [filter] An object that resembles wanted nodes or a function that returns true for wanted nodes.
-             * @param {Number} [generations] The depth of the search. If undefined it searches all generations.
-             * @return {Array} Returns the parents of given nodes.
-            */
+            // ## parents
+            // Finds the parents of given nodes.
+            // @param {Object} [filter] An object that resembles wanted nodes or a function that returns true for wanted nodes.
+            // @param {Number} [generations] The depth of the search. If undefined it searches all generations.
+            // @return {Array} Returns the parents of given nodes.
             "parents": function (filter, generations) {
                 return get(nodes, lastParentsKey, filter, generations);
             },
 
-            /**
-             * Returns the children of given nodes.
-             * 
-             * @method children
-             * @param {Object} [filter] An object that resembles wanted nodes or a function that returns true for wanted nodes.
-             * @param {Number} [generations] The depth of the search. If undefined it searches all generations.
-             * @return {Array} Returns the children of given nodes.
-            */
+            // ### children
+            // Returns the children of given nodes.
+            // @param {Object} [filter] An object that resembles wanted nodes or a function that returns true for wanted nodes.
+            // @param {Number} [generations] The depth of the search. If undefined it searches all generations.
+            // @return {Array} Returns the children of given nodes.
             "children": function (filter, generations) {
                 return get(nodes, lastChildrenKey, filter, generations);
             },
 
-            /**
-             * Adds parents to given nodes.
-             * 
-             * @method addParents
-             * @param {Array} parents An array of nodes.
-             * @return {Array} Returns the given nodes.
-            */
+            // ### addParents
+            // Adds parents to given nodes.
+            // @param {Array} parents An array of nodes.
+            // @return {Array} Returns the given nodes.
             "addParents": function (parents) {
                 return add(nodes, lastParentsKey, add(toNodes(parents), lastChildrenKey, nodes));
             },
 
-            /**
-             * Adds children to given nodes.
-             * 
-             * @method addChildren
-             * @param {Array} children An array of nodes.
-             * @return {Array} Returns the given nodes.
-            */
+            // ### addChildren
+            // Adds children to given nodes.
+            // @param {Array} children An array of nodes.
+            // @return {Array} Returns the given nodes.
             "addChildren": function (children) {
                 return add(nodes, lastChildrenKey, add(toNodes(children), lastParentsKey, nodes));
             },
 
-            /**
-             * Removes parents of given nodes.
-             * 
-             * @method removeParents
-             * @param {Array} parents An array of nodes.
-             * @return {Array} Returns the given nodes.
-            */
+            // ### removeParents
+            // Removes parents of given nodes.
+            // @param {Array} parents An array of nodes.
+            // @return {Array} Returns the given nodes.
             "removeParents": function (parents) {
                 return remove(nodes, lastParentsKey, remove(toNodes(parents), lastChildrenKey, nodes));
             },
 
-            /**
-             * Removes children of given nodes.
-             * 
-             * @method removeChildren
-             * @param {Array} children An array of nodes.
-             * @return {Array} Returns the given nodes.
-            */
+            // ### removeChildren
+            // Removes children of given nodes.
+            // @param {Array} children An array of nodes.
+            // @return {Array} Returns the given nodes.
             "removeChildren": function (children) {
                 return remove(nodes, lastChildrenKey, remove(toNodes(children), lastParentsKey, nodes));
             }
         };
     };
 
-    // Add graph to global object.
+    // Add Graph to global object wit the alias GRAPH.
     window.GRAPH = Graph;
 }(window, Object));
