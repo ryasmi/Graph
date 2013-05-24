@@ -79,7 +79,7 @@
         lastChildrenKey = childrenKey || lastChildrenKey;
 
         return {
-            // ## parents
+            // ### parents
             // Finds the parents of given nodes.
             // @param {Object} [filter] An object that resembles wanted nodes or a function that returns true for wanted nodes.
             // @param {Number} [generations] The depth of the search. If undefined it searches all generations.
