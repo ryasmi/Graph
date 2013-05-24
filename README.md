@@ -15,5 +15,5 @@ Please make contributions by [forking](https://github.com/ryansmith94/Graph/fork
 **Documentation**   
 Documentation can be found on the [website](http://ryansmith94.github.io/Graph/docs/graph.min.html).
 
-**Installation**
+**Installation**   
 Reference the [raw Github version](https://raw.github.com/ryansmith94/Graph/master/build/graph.min.js) of [graph.min.js](https://www.github.com/ryansmith94/Graph/master/build/graph.min.js) in your code.
