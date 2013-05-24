@@ -131,6 +131,6 @@
         };
     };
 
-    // Add Graph to global object wit the alias GRAPH.
+    // Add Graph to global object with the alias "GRAPH".
     window.GRAPH = Graph;
 }(window, Object));
