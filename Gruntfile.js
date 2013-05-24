@@ -63,7 +63,7 @@ module.exports = function (grunt) {
             pages: {
                 command: [
                     "cd ../graph-pages",
-                    "git commit -am 'Auto-compile.'",
+                    "git commit -am 'New build (auto-compiled).'",
                     "git push"
                 ].join("&&"),
                 options: {
@@ -72,7 +72,7 @@ module.exports = function (grunt) {
             },
             compile: {
                 command: [
-                    "git commit -am 'Auto-compile.'",
+                    "git commit -am 'New build (auto-compiled).'",
                     "git push"
                 ].join("&&"),
                 options: {
