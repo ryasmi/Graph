@@ -38,23 +38,10 @@ module.exports = function (grunt) {
                 jshintrc: ".jshintrc"
             }
         },
-        yuidoc: {
-            compile: {
-                name: "<%= pkg.name %>",
-                description: "<%= pkg.description %>",
-                url: "<%= pkg.url %>",
-                version: "<%= grunt.template.today('yyyy-mm-dd, HH:MM') %>",
-                logo: "../images/logo.png",
-                options: {
-                    paths: "src",
-                    outdir: "../graph-pages/docs"
-                }
-            }
-        },
         shell: {
             docco: {
                 command: [
-                    "docco build/<%= pkg.name %>.min.js -o ../graph-pages/docs"
+                    "docco build/<%= pkg.name %>.min.js -o ../graph.docs/docs"
                 ].join("&&"),
                 options: {
                     stdout: true
@@ -62,7 +49,7 @@ module.exports = function (grunt) {
             },
             pages: {
                 command: [
-                    "cd ../graph-pages",
+                    "cd ../graph.docs",
                     "git commit -am 'New build (auto-compiled).'",
                     "git push"
                 ].join("&&"),
