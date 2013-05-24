@@ -52,6 +52,14 @@ module.exports = function (grunt) {
             }
         },
         shell: {
+            docco: {
+                command: [
+                    "docco build/<%= pkg.name %>.min.js -o ../graph-pages/docs"
+                ].join("&&"),
+                options: {
+                    stdout: true
+                }
+            },
             pages: {
                 command: [
                     "cd ../graph-pages",
@@ -91,10 +99,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-jshint");
-    grunt.loadNpmTasks("grunt-contrib-yuidoc");
     grunt.loadNpmTasks("grunt-shell");
 
     // Default task(s).
-    grunt.registerTask("default", ["jshint", "concat", "uglify", "test", "yuidoc"]);
-    grunt.registerTask("compile", ["jshint", "concat", "uglify", "test", "yuidoc", "shell"]);
+    grunt.registerTask("default", ["jshint", "concat", "test", "shell:docco"]);
+    grunt.registerTask("compile", ["jshint", "concat", "test", "shell:docco", "uglify", "shell:pages", "shell:compile"]);
 };
