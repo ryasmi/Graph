@@ -32,7 +32,7 @@
 
     // Finds relations between nodes.
     // Filter: An object that "resembles" a node or a function that takes a node and returns true or false.
-    // Generations: The number of generations to search through. If null/undefined it will search through all of them.
+    // Generations: The number of generations to search through, if null/undefined it will search through all of them.
     var get = function (nodes, relation, filter, generations) {
         var filterFn;
 
