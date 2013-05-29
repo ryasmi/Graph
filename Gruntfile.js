@@ -41,7 +41,6 @@ module.exports = function (grunt) {
         shell: {
             docco: {
                 command: [
-                    "sudo npm install -g docco",
                     "docco build/release.min.js -o ../docs/docs"
                 ].join("&&"),
                 options: {
