@@ -58,8 +58,6 @@ module.exports = function (grunt) {
                     "cd ../dev",
                     "git checkout master",
                     "git merge dev",
-                    "git add --all",
-                    "git commit -am 'New release (auto-compiled).'",
                     "git push",
                     "git checkout dev"
                 ].join("&&"),
