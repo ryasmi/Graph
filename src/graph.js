@@ -1,10 +1,9 @@
-/* jslint browser: true, vars: true, indent: 4 */
 // # Graph
 // Attaches the base class Graph to the global object (window) with the name GRAPH.
 (function (window, Object, undefined) {
     "use strict";
-    var lastParentsKey = "parents";
-    var lastChildrenKey = "children";
+    var parentsKey = "parents";
+    var childrenKey = "children";
 
     // Determines if one object (self) is a subset of another object (obj).
     var resembles = function (self, obj) {
@@ -66,17 +65,19 @@
     // ## Graph
     // Provides methods for manipulating a graph of nodes.
     // @param {Array} nodes An array of nodes.
-    // @param {Array} [parentsKey] The key to be used to find parents of nodes. Only needs to be set once.
-    // @param {Array} [childrenKey] The key to be used to find children of nodes. Only needs to be set once.
+    // @param {Object} [options] An object that can be used for configuration.
+    // @prop {Array} options.parentsKey The key to be used to find parents of nodes. Only needs to be set once.
+    // @prop {Array} options.childrenKey The key to be used to find children of nodes. Only needs to be set once.
     // @return {Object} Returns an object with methods to manipulate the given nodes.
-    var Graph = function (nodes, parentsKey, childrenKey) {
+    var Graph = function (nodes, options) {
         var toNodes = function (nodes) {
             return (Object.prototype.toString.call(nodes) !== "[object Array]") ? [nodes] : nodes;
         };
 
+        options = options || {};
         nodes = toNodes(nodes);
-        lastParentsKey = parentsKey || lastParentsKey;
-        lastChildrenKey = childrenKey || lastChildrenKey;
+        parentsKey = options.parentsKey || parentsKey;
+        childrenKey = options.childrenKey || childrenKey;
 
         return {
             // ### parents
@@ -85,7 +86,7 @@
             // @param {Number} [generations] The depth of the search. If undefined it searches all generations.
             // @return {Array} Returns the parents of given nodes.
             "parents": function (filter, generations) {
-                return get(nodes, lastParentsKey, filter, generations);
+                return get(nodes, parentsKey, filter, generations);
             },
 
             // ### children
@@ -94,7 +95,7 @@
             // @param {Number} [generations] The depth of the search. If undefined it searches all generations.
             // @return {Array} Returns the children of given nodes.
             "children": function (filter, generations) {
-                return get(nodes, lastChildrenKey, filter, generations);
+                return get(nodes, childrenKey, filter, generations);
             },
 
             // ### addParents
@@ -102,7 +103,7 @@
             // @param {Array} parents An array of nodes.
             // @return {Array} Returns the given nodes.
             "addParents": function (parents) {
-                return add(nodes, lastParentsKey, add(toNodes(parents), lastChildrenKey, nodes));
+                return add(nodes, parentsKey, add(toNodes(parents), childrenKey, nodes));
             },
 
             // ### addChildren
@@ -110,7 +111,7 @@
             // @param {Array} children An array of nodes.
             // @return {Array} Returns the given nodes.
             "addChildren": function (children) {
-                return add(nodes, lastChildrenKey, add(toNodes(children), lastParentsKey, nodes));
+                return add(nodes, childrenKey, add(toNodes(children), parentsKey, nodes));
             },
 
             // ### removeParents
@@ -118,7 +119,7 @@
             // @param {Array} parents An array of nodes.
             // @return {Array} Returns the given nodes.
             "removeParents": function (parents) {
-                return remove(nodes, lastParentsKey, remove(toNodes(parents), lastChildrenKey, nodes));
+                return remove(nodes, parentsKey, remove(toNodes(parents), childrenKey, nodes));
             },
 
             // ### removeChildren
@@ -126,7 +127,7 @@
             // @param {Array} children An array of nodes.
             // @return {Array} Returns the given nodes.
             "removeChildren": function (children) {
-                return remove(nodes, lastChildrenKey, remove(toNodes(children), lastParentsKey, nodes));
+                return remove(nodes, childrenKey, remove(toNodes(children), parentsKey, nodes));
             }
         };
     };

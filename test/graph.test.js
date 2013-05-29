@@ -77,7 +77,7 @@
     var x = {"a": [], "b": []};
     var y = {"a": [], "b": [], "test": 10};
     var z = {"a": [], "b": []};
-    GRAPH([], "a", "b");
+    GRAPH([], {"parentsKey": "a", "childrenKey": "b"});
 
     // Test method availability.
     assert.equal(!!GRAPH().addChildren, true, "Find addChildren function");
