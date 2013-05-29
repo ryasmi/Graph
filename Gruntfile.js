@@ -11,12 +11,12 @@ module.exports = function (grunt) {
                 banner: grunt.file.read("src/banner.txt") + "\n"
             },
             build: {
-                src: "build/<%= pkg.name %>.min.js",
-                dest: "build/<%= pkg.name %>.min.js"
+                src: "build/release.min.js",
+                dest: "build/release.min.js"
             },
             test: {
-                src: "build/<%= pkg.name %>.test.js",
-                dest: "build/<%= pkg.name %>.test.js"
+                src: "build/release.test.js",
+                dest: "build/release.test.js"
             }
         },
         concat: {
@@ -25,11 +25,11 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: ["src/**/*.js"],
-                dest: "build/<%= pkg.name %>.min.js"
+                dest: "build/release.min.js"
             },
             test: {
                 src: ["test/**/*.js"],
-                dest: "build/<%= pkg.name %>.test.js"
+                dest: "build/release.test.js"
             }
         },
         jshint: {
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
         shell: {
             docco: {
                 command: [
-                    "docco build/<%= pkg.name %>.min.js -o ../graph.docs/docs"
+                    "docco build/release.min.js -o ../docs/docs"
                 ].join("&&"),
                 options: {
                     stdout: true
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
             },
             pages: {
                 command: [
-                    "cd ../graph.docs",
+                    "cd ../docs",
                     "git commit -am 'New build (auto-compiled).'",
                     "git push"
                 ].join("&&"),
@@ -78,8 +78,8 @@ module.exports = function (grunt) {
         console.warn = grunt.fail.warn;
 
         // Run code with tests.
-        eval(grunt.file.read("build/" + pkg.name + ".min.js"));
-        eval(grunt.file.read("build/" + pkg.name + ".test.js"));
+        eval(grunt.file.read("build/release.min.js"));
+        eval(grunt.file.read("build/release.test.js"));
     });
 
     // Load the required plugins.

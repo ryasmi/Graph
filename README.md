@@ -13,7 +13,7 @@ Please make contributions by [forking](https://github.com/ryansmith94/Graph/fork
 [This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.](http://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 **Documentation**   
-Documentation can be found on the [website](http://ryansmith94.github.io/Graph/docs/graph.min.html).
+Documentation can be found on the [website](http://ryansmith94.github.io/Graph/docs/release.min.html).
 
 **Installation**   
-Reference the [raw Github version](https://raw.github.com/ryansmith94/Graph/master/build/graph.min.js) of [graph.min.js](https://www.github.com/ryansmith94/Graph/master/build/graph.min.js) in your code.
+Reference the [raw Github version](https://raw.github.com/ryansmith94/Graph/master/build/release.min.js) of [release.min.js](https://www.github.com/ryansmith94/Graph/master/build/release.min.js) in your code.

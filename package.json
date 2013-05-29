@@ -1,24 +1,20 @@
 {
-  "name": "graph",
-  "description": "Provides 'jQuery-like' functionality for Graph structures.",
-  "author": "Ryan Smith",
-  "url": "https://ryansmith.github.io/Graph",
-  "licence": {
-    "name": "CC BY-NC-SA 3.0",
-    "url": "http://creativecommons.org/licenses/by-nc-sa/3.0/"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.5.4",
-    "grunt-contrib-nodeunit": "~0.1.2",
-    "grunt-contrib-uglify": "~0.2.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-cli": "~0.1.8",
-    "docco": "~0.6.2",
-    "coffee-script": "~1.6.2",
-    "grunt-shell": "~0.2.2"
-  },
-  "scripts": {
-    "test": "grunt"
-  }
+    "name": "graph",
+    "author": "Ryan Smith",
+    "url": "https://www.github.com/ryansmith94/Graph",
+    "licence": {
+        "name": "CC BY-NC-SA 3.0",
+        "url": "http://creativecommons.org/licenses/by-nc-sa/3.0/"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-jshint": "~0.5.4",
+        "grunt-contrib-nodeunit": "~0.1.2",
+        "grunt-contrib-uglify": "~0.2.1",
+        "grunt-contrib-concat": "~0.3.0",
+        "grunt-cli": "~0.1.8"
+    },
+    "scripts": {
+        "test": "grunt"
+    }
 }
