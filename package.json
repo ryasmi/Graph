@@ -17,6 +17,6 @@
     "docco": "~0.6.2"
   },
   "scripts": {
-    "test": "grunt"
+    "test": "grunt travis"
   }
 }

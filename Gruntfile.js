@@ -47,11 +47,21 @@ module.exports = function (grunt) {
                     stdout: true
                 }
             },
-            pages: {
+            release: {
                 command: [
+                    // Create documentation.
                     "cd ../docs",
                     "git commit -am 'New build (auto-compiled).'",
-                    "git push"
+                    "git push",
+
+                    // Merge dev with master.
+                    "cd ../dev",
+                    "git checkout master",
+                    "git merge dev",
+                    "git add --all",
+                    "git commit -am 'New release (auto-compiled).'",
+                    "git push",
+                    "git checkout dev"
                 ].join("&&"),
                 options: {
                     stdout: true
@@ -59,6 +69,7 @@ module.exports = function (grunt) {
             },
             compile: {
                 command: [
+                    "git add --all",
                     "git commit -am 'New build (auto-compiled).'",
                     "git push"
                 ].join("&&"),
@@ -89,6 +100,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-shell");
 
     // Default task(s).
-    grunt.registerTask("default", ["jshint", "concat", "test", "shell:docco"]);
-    grunt.registerTask("compile", ["jshint", "concat", "test", "shell:docco", "uglify", "shell:pages", "shell:compile"]);
+    grunt.registerTask("travis", ["jshint", "concat", "test", "shell:docco"]);
+    grunt.registerTask("compile", ["jshint", "concat", "test", "uglify", "shell:compile"]);
+    grunt.registerTask("release", ["jshint", "concat", "test", "shell:docco", "uglify", "shell:compile", "shell:release"]);
 };
