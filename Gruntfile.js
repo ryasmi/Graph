@@ -49,17 +49,10 @@ module.exports = function (grunt) {
             },
             release: {
                 command: [
-                    // Create documentation.
                     "cd ../docs",
+                    "git add --all",
                     "git commit -am 'New build (auto-compiled).'",
-                    "git push",
-
-                    // Merge dev with master.
-                    "cd ../dev",
-                    "git checkout master",
-                    "git merge dev",
-                    "git push",
-                    "git checkout dev"
+                    "git push"
                 ].join("&&"),
                 options: {
                     stdout: true
