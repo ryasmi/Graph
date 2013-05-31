@@ -45,24 +45,37 @@ module.exports = function (grunt) {
                     "docco build/release.min.js -o ../docs"
                 ].join("&&"),
                 options: {
-                    stdout: true
+                    stdout: true,
+                    stderr: true,
+                    failOnError: true
+                }
+            },
+            clone: {
+                command: [
+                    "rm -rf ../<%= pkg.name %>docs",
+                    "git clone git@github.com:ryansmith94/<%= pkg.name %>.git ../<%= pkg.name %>docs"
+                ].join("&&"),
+                options: {
+                    stdout: true,
+                    stderr: true,
+                    failOnError: true
                 }
             },
             docs: {
                 command: [
-                    "rm -rf docs",
-                    "git clone git@github.com:ryansmith94/<%= pkg.name %>.git ../<%= pkg.name %>-docs",
-                    "cd ../<%= pkg.name %>-docs",
                     "git checkout gh-pages",
                     "docco ../<%= pkg.name %>/build/release.min.js -o docs",
                     "git add --all",
                     "git commit -am 'New release (auto-compiled).'",
                     "git push",
-                    "cd ../<%= pkg.name %>",
-                    "rm -rf ../<%= pkg.name %>-docs"
+                    "rm -rf ../<%= pkg.name %>docs"
                 ].join("&&"),
                 options: {
-                    stdout: true
+                    stdout: true,
+                    stderr: true,
+                    execOptions: {
+                        cwd: "../<%= pkg.name %>docs"
+                    }
                 }
             },
             release: {
@@ -71,12 +84,14 @@ module.exports = function (grunt) {
                     "git commit -am 'New release (auto-compiled).'",
                     "git push",
                     "git checkout master",
-                    "git merge dev",
+                    "git merge dev -m 'Auto-merge.'",
                     "git push",
                     "git checkout dev"
                 ].join("&&"),
                 options: {
-                    stdout: true
+                    stdout: true,
+                    stderr: true,
+                    failOnError: true
                 }
             }
         }
@@ -104,5 +119,5 @@ module.exports = function (grunt) {
     // Default task(s).
     grunt.registerTask("travis", ["jshint", "concat", "test", "shell:travis"]);
     grunt.registerTask("compile", ["jshint", "concat", "test", "uglify"]);
-    grunt.registerTask("release", ["jshint", "concat", "test", "shell:docs", "uglify", "shell:release"]);
+    grunt.registerTask("release", ["jshint", "concat", "test", "shell:clone", "shell:docs", "uglify", "shell:release"]);
 };
