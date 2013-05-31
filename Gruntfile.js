@@ -66,7 +66,7 @@ module.exports = function (grunt) {
                     "git checkout gh-pages",
                     "docco ../<%= pkg.name %>/build/release.min.js -o docs",
                     "git add --all",
-                    "git commit -am 'New release (auto-compiled).'",
+                    "git commit -a -m 'New release (auto-compiled).'",
                     "git push",
                     "rm -rf ../<%= pkg.name %>docs"
                 ].join("&&"),
@@ -81,7 +81,7 @@ module.exports = function (grunt) {
             release: {
                 command: [
                     "git add --all",
-                    "git commit -am 'New release (auto-compiled).'",
+                    "git commit -a -m 'New release (auto-compiled).'",
                     "git push",
                     "git checkout master",
                     "git merge dev -m 'Auto-merge.'",
