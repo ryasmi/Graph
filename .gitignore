@@ -2,7 +2,6 @@
 .DS_STORE
 
 # Node.
-node_modules
 npm-debug.log
 
 # Testing
