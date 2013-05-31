@@ -52,7 +52,7 @@ module.exports = function (grunt) {
             },
             clone: {
                 command: [
-                    "rm -rf ../<%= pkg.name %>-docs",
+                    "rm -rf ../<%= pkg.name %>docs",
                     "git clone git@github.com:ryansmith94/<%= pkg.name %>.git ../<%= pkg.name %>docs"
                 ].join("&&"),
                 options: {
@@ -73,7 +73,6 @@ module.exports = function (grunt) {
                 options: {
                     stdout: true,
                     stderr: true,
-                    failOnError: true,
                     execOptions: {
                         cwd: "../<%= pkg.name %>docs"
                     }
@@ -85,7 +84,7 @@ module.exports = function (grunt) {
                     "git commit -am 'New release (auto-compiled).'",
                     "git push",
                     "git checkout master",
-                    "git merge dev -m 'Auto-merge.",
+                    "git merge dev -m 'Auto-merge.'",
                     "git push",
                     "git checkout dev"
                 ].join("&&"),
