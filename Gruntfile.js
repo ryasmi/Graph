@@ -53,7 +53,7 @@ module.exports = function (grunt) {
             clone: {
                 command: [
                     "rm -rf ../<%= pkg.name %>-docs",
-                    "git clone git@github.com:ryansmith94/<%= pkg.name %>.git ../<%= pkg.name %>-docs"
+                    "git clone git@github.com:ryansmith94/<%= pkg.name %>.git ../<%= pkg.name %>docs"
                 ].join("&&"),
                 options: {
                     stdout: true,
@@ -68,14 +68,14 @@ module.exports = function (grunt) {
                     "git add --all",
                     "git commit -am 'New release (auto-compiled).'",
                     "git push",
-                    "rm -rf ../<%= pkg.name %>-docs"
+                    "rm -rf ../<%= pkg.name %>docs"
                 ].join("&&"),
                 options: {
                     stdout: true,
                     stderr: true,
                     failOnError: true,
                     execOptions: {
-                        cwd: "../<%= pkg.name %>-docs"
+                        cwd: "../<%= pkg.name %>docs"
                     }
                 }
             },
