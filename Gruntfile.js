@@ -1,4 +1,5 @@
 /* jshint node: true, -W061 */
+// Merge Test.
 module.exports = function (grunt) {
     "use strict";
     var pkg = grunt.file.readJSON("package.json");
