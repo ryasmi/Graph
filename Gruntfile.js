@@ -1,5 +1,4 @@
 /* jshint node: true, -W061 */
-// Merge Test.
 module.exports = function (grunt) {
     "use strict";
     var pkg = grunt.file.readJSON("package.json");
@@ -38,72 +37,15 @@ module.exports = function (grunt) {
             options: {
                 jshintrc: ".jshintrc"
             }
-        },
-        shell: {
-            travis: {
-                command: [
-                    "docco build/release.min.js -o ../docs"
-                ].join("&&"),
-                options: {
-                    stdout: true,
-                    stderr: true,
-                    failOnError: true
-                }
-            },
-            clone: {
-                command: [
-                    "rm -rf ../<%= pkg.name %>docs",
-                    "git clone git@github.com:ryansmith94/<%= pkg.name %>.git ../<%= pkg.name %>docs"
-                ].join("&&"),
-                options: {
-                    stdout: true,
-                    stderr: true,
-                    failOnError: true
-                }
-            },
-            docs: {
-                command: [
-                    "git checkout gh-pages",
-                    "docco ../<%= pkg.name %>/build/release.min.js -o docs",
-                    "git add --all",
-                    "git commit -a -m 'New release (auto-compiled).'",
-                    "git push",
-                    "rm -rf ../<%= pkg.name %>docs"
-                ].join("&&"),
-                options: {
-                    stdout: true,
-                    stderr: true,
-                    execOptions: {
-                        cwd: "../<%= pkg.name %>docs"
-                    }
-                }
-            },
-            release: {
-                command: [
-                    "git add --all",
-                    "git commit -a -m 'New release (auto-compiled).'",
-                    "git push",
-                    "git checkout master",
-                    "git merge dev -m 'Auto-merge.'",
-                    "git push",
-                    "git checkout dev"
-                ].join("&&"),
-                options: {
-                    stdout: true,
-                    stderr: true,
-                    failOnError: true
-                }
-            }
         }
     });
 
     // Custom task for running test files.
     grunt.registerTask("test", function () {
-        var window = {};
-        var console = {};
-        window.use = "shut up jshint";
-        console.log = grunt.log.oklns;
-        console.warn = grunt.fail.warn;
+        // Create console.
+        this.console = {};
+        this.console.log = grunt.log.oklns;
+        this.console.warn = grunt.fail.warn;
 
         // Run code with tests.
         eval(grunt.file.read("build/release.min.js"));
@@ -114,10 +56,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-jshint");
-    grunt.loadNpmTasks("grunt-shell");
 
     // Default task(s).
-    grunt.registerTask("travis", ["jshint", "concat", "test", "shell:travis"]);
-    grunt.registerTask("compile", ["jshint", "concat", "test", "uglify"]);
-    grunt.registerTask("release", ["jshint", "concat", "test", "shell:clone", "shell:docs", "uglify", "shell:release"]);
+    grunt.registerTask("default", ["jshint", "concat", "uglify", "test"]);
 };
