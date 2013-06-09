@@ -1,5 +1,5 @@
 # [Graph](https://www.github.com/ryansmith94/Graph)
-Provides "jQuery-like" functionality for graph structures.
+Provides "jQuery-like" functionality for graph structures in JavaScript.
 
 [![Build Status](https://travis-ci.org/ryansmith94/Graph.png)](https://travis-ci.org/ryansmith94/Graph)
 
