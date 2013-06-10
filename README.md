@@ -28,7 +28,6 @@ graph(nodes[, options]);
 **Returns**   
 {Object} graph: A structure that can be manipulated like a graph.
 
-
 ## Methods
 ### Children
 Finds the descendants of the nodes in the graph.
