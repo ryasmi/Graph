@@ -121,7 +121,7 @@ Returns the array of nodes in the graph.
 graph(nodes, options).nodes();
 ```
 
-**Arguments**
+**Arguments**   
 None.
 
 **Returns**   
