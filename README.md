@@ -1,19 +1,19 @@
-# [Graph](https://www.github.com/ryansmith94/Graph)
+# 1 [Graph](https://www.github.com/ryansmith94/Graph)
 Provides "jQuery-like" functionality for graph structures in JavaScript.
 
 [![Build Status](https://travis-ci.org/ryansmith94/Graph.png)](https://travis-ci.org/ryansmith94/Graph)
 
-## License
+## 1.1 License
 [This work is licensed under a CC BY-NC-SA 3.0 License.](<%= http://creativecommons.org/licenses/by-nc-sa/3.0/ %>)
 
-## Contributing
+## 1.2 Contributing
 Please make contributions by [forking](https://github.com/ryansmith94/Graph/fork "/fork") the project and creating a [pull-request](https://github.com/ryansmith94/Graph/pull/new/master "/pull-request"). Other contributions include maintaining the [Wiki](https://github.com/ryansmith94/Graph/wiki "/wiki") and [issues](https://github.com/ryansmith94/Graph/issues?state=open "/issues").
 
-# Documentation
-## Installation
+# 2 Documentation
+## 2.1 Installation
 Reference the [raw Github version](https://raw.github.com/ryansmith94/Graph/master/build/release.min.js) of [release.min.js](https://www.github.com/ryansmith94/Graph/blob/master/build/release.min.js) in your code.
 
-## Getting Started
+## 2.2 Getting Started
 To create a new graph, use the global "graph" function.
 ```JavaScript
 graph(nodes[, options]);
@@ -28,8 +28,8 @@ graph(nodes[, options]);
 **Returns**   
 {Object} graph: A structure that can be manipulated like a graph.
 
-## Methods
-### Children
+## 2.3 Methods
+### 2.3.1 Children
 Finds the descendants of the nodes in the graph.
 ```JavaScript
 graph(nodes, options).children([fn, generations]);
@@ -42,8 +42,7 @@ graph(nodes, options).children([fn, generations]);
 **Returns**   
 {Object} graph: A structure that can be manipulated like a graph.
 
-
-### Parents
+### 2.3.2 Parents
 Finds the ancestors of the nodes in the graph.
 ```JavaScript
 graph(nodes, options).parents([fn, generations]);
@@ -56,8 +55,7 @@ graph(nodes, options).parents([fn, generations]);
 **Returns**   
 {Object} graph: A structure that can be manipulated like a graph.
 
-
-### addChildren
+### 2.3.3 addChildren
 Adds children to the nodes in the graph.
 ```JavaScript
 graph(nodes, options).addChildren(children);
@@ -69,8 +67,7 @@ graph(nodes, options).addChildren(children);
 **Returns**   
 {Object} graph: A structure that can be manipulated like a graph.
 
-
-### addParents
+### 2.3.4 addParents
 Adds parents to the nodes in the graph.
 ```JavaScript
 graph(nodes, options).addParents(parents);
@@ -82,8 +79,7 @@ graph(nodes, options).addParents(parents);
 **Returns**   
 {Object} graph: A structure that can be manipulated like a graph.
 
-
-### removeChildren
+### 2.3.5 removeChildren
 Removes children from the nodes in the graph.
 ```JavaScript
 graph(nodes, options).removeChildren([children]);
@@ -95,8 +91,7 @@ graph(nodes, options).removeChildren([children]);
 **Returns**   
 {Object} graph: A structure that can be manipulated like a graph.
 
-
-### removeParents
+### 2.3.6 removeParents
 Removes parents from the nodes in the graph.
 ```JavaScript
 graph(nodes, options).removeChildren([parents]);
@@ -108,8 +103,7 @@ graph(nodes, options).removeChildren([parents]);
 **Returns**   
 {Object} graph: A structure that can be manipulated like a graph.
 
-
-### filter
+### 2.3.7 filter
 Filters out nodes in graph.
 ```JavaScript
 graph(nodes, options).filter([fn]);
@@ -121,8 +115,7 @@ graph(nodes, options).filter([fn]);
 **Returns**   
 {Object} graph: A structure that can be manipulated like a graph.
 
-
-### nodes
+### 2.3.8 nodes
 Returns the array of nodes in the graph.
 ```JavaScript
 graph(nodes, options).nodes();
