@@ -1,5 +1,5 @@
 {
-  "name": "graph",
+  "name": "micro-graph",
   "author": "ryansmith94",
   "homepage": "https://www.github.com/ryansmith94/Graph",
   "description": "A micro-library that provides \"jQuery-like\" functionality for graph structures in JavaScript.",

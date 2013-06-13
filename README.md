@@ -13,6 +13,8 @@ Please make contributions by [forking](https://github.com/ryansmith94/Graph/fork
 ## 1 Installation
 Reference the [raw Github version](https://raw.github.com/ryansmith94/Graph/master/build/release.min.js) of [release.min.js](https://www.github.com/ryansmith94/Graph/blob/master/build/release.min.js) in your code.
 
+Graph is also available as a node package called "micro-graph". You can install it to your local repository using `npm install micro-graph --save-dev` and you can use the library with node by using `var graph = require("micro-graph").graph;` in your JavaScript file.
+
 ## 2 Getting Started
 To create a new graph, use the global "graph" function.
 ```JavaScript
