@@ -1,9 +1,10 @@
-/* jshint devel: true, maxstatements: false */
-(function (graph, assert) {
+/* jshint maxstatements: false, node: true */
+(function () {
     "use strict";
 
     // Setup.
-    var test = assert();
+    var test = require("micro-assert").assert();
+    var graph = require("./release.min.js").graph;
     var x = {"a": [], "b": []};
     var y = {"a": [], "b": [], "test": 10};
     var z = {"a": [], "b": []};
@@ -59,4 +60,4 @@
 
     // Output test results.
     return test.result();
-}(this.graph, this.assert));
+}());
