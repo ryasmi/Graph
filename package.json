@@ -1,42 +1,42 @@
 {
-  "name": "micro-graph",
-  "author": "ryansmith94",
-  "homepage": "https://www.github.com/ryansmith94/Graph",
-  "description": "A micro-library that provides \"jQuery-like\" functionality for graph structures in JavaScript.",
-  "keywords": [
-    "graph",
-    "traversal"
-  ],
-  "bugs": {
-    "url": "http://github.com/ryansmith94/Graph/issues"
-  },
-  "version": "1371.1288.28357",
-  "licence": {
-    "type": "MIT",
-    "url": "https://github.com/ryansmith94/Graph/blob/master/license.md"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ryansmith94/Graph.git"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.5.4",
-    "grunt-contrib-nodeunit": "~0.1.2",
-    "grunt-contrib-uglify": "~0.2.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-cli": "~0.1.8",
-    "micro-assert": "~1371.1288.25812"
-  },
-  "scripts": {
-    "test": "grunt"
-  },
-  "engines": {
-    "node": ">= 0.8.0"
-  },
-  "readmeFilename": "readme.md",
-  "main": "./build/release.min.js",
-  "directories": {
-    "build": "build"
-  }
+    "name": "micro-graph",
+    "author": "ryansmith94",
+    "homepage": "https://www.github.com/ryansmith94/Graph",
+    "description": "A micro-library that provides \"jQuery-like\" functionality for graph structures in JavaScript.",
+    "keywords": [
+        "graph",
+        "traversal"
+    ],
+    "bugs": {
+        "url": "http://github.com/ryansmith94/Graph/issues"
+    },
+    "version": "1.0.1",
+    "licence": {
+        "type": "MIT",
+        "url": "https://github.com/ryansmith94/Graph/blob/master/license.md"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ryansmith94/Graph.git"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-jshint": "~0.5.4",
+        "grunt-contrib-nodeunit": "~0.1.2",
+        "grunt-contrib-uglify": "~0.2.1",
+        "grunt-contrib-concat": "~0.3.0",
+        "grunt-cli": "~0.1.8",
+        "micro-assert": "~1371.1288.25812"
+    },
+    "scripts": {
+        "test": "grunt"
+    },
+    "engines": {
+        "node": ">= 0.8.0"
+    },
+    "readmeFilename": "readme.md",
+    "main": "./build/release.min.js",
+    "directories": {
+        "build": "build"
+    }
 }

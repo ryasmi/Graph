@@ -1,8 +1,8 @@
 (function (scope) {
-    "use strict";
+    'use strict';
     var config = {
-        parentsKey: "parents",
-        childrenKey: "children"
+        parentsKey: 'parents',
+        childrenKey: 'children'
     };
 
     var add = function (nodes, relation, relatedNodes) {
@@ -36,7 +36,7 @@
     };
 
     var toNodes = function (nodes) {
-        return (Object.prototype.toString.call(nodes) !== "[object Array]") ? [nodes] : nodes;
+        return (Object.prototype.toString.call(nodes) !== '[object Array]') ? [nodes] : nodes;
     };
 
     var trueFn = function () {
