@@ -15,6 +15,12 @@ Reference the [raw Github version](https://raw.github.com/ryansmith94/Graph/mast
 
 Graph is also available as a node package called "micro-graph". You can install it to your local repository using `npm install micro-graph --save-dev` and you can use the library with node by using `var graph = require("micro-graph").graph;` in your JavaScript file.
 
+Graph is compatible with requireJS and can be used by wrapping your code in the following block:
+```JavaScript
+require(['graph'], function (graph) {
+	// Your code.
+});
+
 ## 2 Getting Started
 To create a new graph, use the global "graph" function.
 ```JavaScript

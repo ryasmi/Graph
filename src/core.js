@@ -82,7 +82,16 @@
         return self;
     };
 
-    scope.graph = function (nodes, options) {
+    var constructor = function (nodes, options) {
         return new Graph(nodes, options);
     };
+
+    // AMD Support.
+    if (typeof scope.define === 'Function') {
+        scope.define('graph', [], function () {
+            return constructor;
+        });
+    } else {
+        scope.graph = constructor;
+    }
 }(this));
