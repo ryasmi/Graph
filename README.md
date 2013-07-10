@@ -20,6 +20,7 @@ Graph is compatible with requireJS and can be used by wrapping your code in the 
 require(['graph'], function (graph) {
 	// Your code.
 });
+```
 
 ## 2 Getting Started
 To create a new graph, use the global "graph" function.
