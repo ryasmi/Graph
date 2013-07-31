@@ -11,9 +11,8 @@ Please make contributions by [forking](https://github.com/ryansmith94/Graph/fork
 
 # Documentation
 ## 1 Installation
+### 1.1 Browser
 Reference the [raw Github version](https://raw.github.com/ryansmith94/Graph/master/build/release.min.js) of [release.min.js](https://www.github.com/ryansmith94/Graph/blob/master/build/release.min.js) in your code.
-
-Graph is also available as a node package called "micro-graph". You can install it to your local repository using `npm install micro-graph --save-dev` and you can use the library with node by using `var graph = require("micro-graph").graph;` in your JavaScript file.
 
 Graph is compatible with requireJS and can be used by wrapping your code in the following block:
 ```JavaScript
@@ -21,6 +20,15 @@ require(['graph'], function (graph) {
 	// Your code.
 });
 ```
+
+### 1.2 Node
+Graph is also available as a node package called "micro-graph". You can install it to your local repository using `npm install micro-graph --save-dev` and you can use the library with node by using `var graph = require("micro-graph").graph;` in your JavaScript file.
+
+### 1.3 Versioning
+This project is maintained under the [semantic versioning guidlines](http://semver.org/). This means that releases will have the following format `<major>.<minor>.<patch>`.
+* Breaking backward compatibility bumps the major (and resets the minor and patch).
+* New additions without breaking backward compatibility bumps the minor (and resets the patch).
+* Bug fixes and misc changes bumps the patch.
 
 ## 2 Getting Started
 To create a new graph, use the global "graph" function.
