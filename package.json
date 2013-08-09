@@ -29,7 +29,7 @@
         "mocha": "~1.12.0"
     },
     "scripts": {
-        "test": "grunt"
+        "test": "make test"
     },
     "engines": {
         "node": ">= 0.8.0"
