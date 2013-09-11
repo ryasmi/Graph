@@ -31,7 +31,7 @@ module.exports = function (grunt) {
         },
         simplemocha: {
             options: {
-                globals: ['expect'],
+                globals: ['chai'],
                 timeout: 3000,
                 ignoreLeaks: false,
                 ui: 'bdd',

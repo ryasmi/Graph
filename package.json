@@ -1,42 +1,43 @@
 {
-    "name": "micro-graph",
-    "author": "ryansmith94",
-    "homepage": "https://www.github.com/ryansmith94/Graph",
-    "description": "A micro-library that provides \"jQuery-like\" functionality for graph structures in JavaScript.",
-    "keywords": [
-        "graph",
-        "traversal"
-    ],
-    "bugs": {
-        "url": "http://github.com/ryansmith94/Graph/issues"
-    },
-    "version": "1.0.3",
-    "licence": {
-        "type": "MIT",
-        "url": "https://github.com/ryansmith94/Graph/blob/master/license.md"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/ryansmith94/Graph.git"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.1",
-        "grunt-contrib-jshint": "~0.5.4",
-        "grunt-contrib-uglify": "~0.2.1",
-        "grunt-contrib-concat": "~0.3.0",
-        "grunt-cli": "~0.1.8",
-        "expect.js": "~0.2.0",
-        "grunt-simple-mocha": "~0.4.0"
+  "name": "micro-graph",
+  "author": "ryansmith94",
+  "homepage": "https://www.github.com/ryansmith94/Graph",
+  "description": "A micro-library that provides \"jQuery-like\" functionality for graph structures in JavaScript.",
+  "keywords": [
+    "graph",
+    "traversal"
+  ],
+  "bugs": {
+    "url": "http://github.com/ryansmith94/Graph/issues"
+  },
+  "version": "1.0.3",
+  "licence": {
+    "type": "MIT",
+    "url": "https://github.com/ryansmith94/Graph/blob/master/license.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ryansmith94/Graph.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.5.4",
+    "grunt-contrib-uglify": "~0.2.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-cli": "~0.1.8",
+    "grunt-simple-mocha": "~0.4.0",
+    "chai": "~1.7.2",
+    "mocha": "~1.12.1"
   },
   "scripts": {
     "test": "grunt"
   },
-    "engines": {
-        "node": ">= 0.8.0"
-    },
-    "readmeFilename": "readme.md",
-    "main": "./build/release.min.js",
-    "directories": {
-        "build": "build"
-    }
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "readmeFilename": "readme.md",
+  "main": "./build/release.min.js",
+  "directories": {
+    "build": "build"
+  }
 }

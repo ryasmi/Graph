@@ -4,7 +4,7 @@
 /* global before */
 (function () {
     'use strict';
-    var expect = require('expect.js');
+    var expect = require('chai').expect;
 
     describe('graph()', function () {
         var graph;
