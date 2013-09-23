@@ -46,7 +46,7 @@ graph(nodes[, options]);
 {Object} graph: A structure that can be manipulated like a graph.
 
 ## 3 Methods
-### 3.1 Children
+### 3.1 children
 Finds the descendants of the nodes in the graph.
 ```JavaScript
 graph(nodes, options).children([fn, generations]);
@@ -59,7 +59,7 @@ graph(nodes, options).children([fn, generations]);
 **Returns**   
 {Object} graph: A structure that can be manipulated like a graph.
 
-### 3.2 Parents
+### 3.2 parents
 Finds the ancestors of the nodes in the graph.
 ```JavaScript
 graph(nodes, options).parents([fn, generations]);
