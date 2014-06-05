@@ -4,7 +4,9 @@ A micro-library that provides "jQuery-like" functionality for graph structures i
 [![Build Status](https://travis-ci.org/ryansmith94/Graph.png)](https://travis-ci.org/ryansmith94/Graph)
 
 **License**   
-[This work is licensed under a Attribution-NonCommercial-ShareAlike 4.0 International License.](https://github.com/ryansmith94/Graph/blob/master/license.txt)
+This work is licensed under a [Attribution-NonCommercial-ShareAlike 4.0 International
+license](https://gist.githubusercontent.com/ryansmith94/b947ee33d7bfffff9d16/raw/bcd4b00739543c4a215a1f60538d899e2c22cdfd/BY-NC-SA.txt).
+
 
 **Contributing**   
 Please make contributions by [forking](https://github.com/ryansmith94/Graph/fork "/fork") the project and creating a [pull-request](https://github.com/ryansmith94/Graph/pull/new/master "/pull-request"). Other contributions include maintaining the [Wiki](https://github.com/ryansmith94/Graph/wiki "/wiki") and [issues](https://github.com/ryansmith94/Graph/issues?state=open "/issues").
