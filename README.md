@@ -113,7 +113,7 @@ graph(nodes, options).removeChildren([children]);
 ### 3.6 removeParents
 Removes parents from the nodes in the graph.
 ```JavaScript
-graph(nodes, options).removeChildren([parents]);
+graph(nodes, options).removeParents([parents]);
 ```
 
 **Arguments**
