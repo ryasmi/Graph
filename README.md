@@ -41,8 +41,8 @@ graph(nodes[, options]);
 **Arguments**
 * {Array} nodes: An array of nodes.
 * {Object} options: A object containing options that change the configuration of the graph.
-    * {String} parentsKey: Sets the key to be used for finding parents.
-    * {String} childrenKey: Sets the key to be used for finding children.
+    * {String} parentsKey: Sets the key to be used for finding parents. Defaults to `"parents"`.
+    * {String} childrenKey: Sets the key to be used for finding children. Defaults to `"children"`.
 
 **Returns**   
 {Object} graph: A structure that can be manipulated like a graph.
